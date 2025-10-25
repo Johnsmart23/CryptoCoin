@@ -645,6 +645,33 @@ html, body, #root {
   font-size: 20px;
   opacity: 0.9;
 }
+.policy-section,
+.disclaimer-section,
+.terms-section {
+  background: #f9f9f9;
+  padding: 60px 20px;
+  margin-top: 40px;
+  text-align: center;
+  border-radius: 12px;
+}
+
+.policy-section h2,
+.disclaimer-section h2,
+.terms-section h2 {
+  color: #0a0a0a;
+  margin-bottom: 15px;
+}
+
+.policy-section p,
+.disclaimer-section p,
+.terms-section p {
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: #444;
+  font-size: 16px;
+}
+
 
 /*contact-page*/
 .contact-page {
