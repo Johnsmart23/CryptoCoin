@@ -62,7 +62,7 @@ const Header = () => {
 
           {/* ✅ Login button now navigates to login page */}
           <li>
-            <Link to="/signup">
+            <Link to="/admin">
               <button className="login-btn">Login</button>
             </Link>
           </li>

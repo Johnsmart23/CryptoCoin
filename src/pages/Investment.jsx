@@ -13,7 +13,7 @@ const InvestmentPlan = () => {
           <li><Link to="/wallet">💼 My Wallet</Link></li>
           <li><Link to="/transfer">💸 Transfer Coin</Link></li>
           <li><Link to="/transactions">💳 Transactions</Link></li>
-          <li>👤 Profile</li>
+          <li><Link to="/profile">Profile Profile</Link></li>
           <li>🚪 Log Out</li>
         </ul>
       </aside>

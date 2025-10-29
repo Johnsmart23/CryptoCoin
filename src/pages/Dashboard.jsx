@@ -28,7 +28,8 @@ const WalletDashboard = () => {
             <li><Link to="/investment">💰 Investment</Link></li>
             <li><Link to="/transfer">💸  Transfer Coin</Link></li>
             <li><Link to="/transactions">💳 Transaction</Link></li>
-            <li>👤 Profile</li>
+            <li><Link to="/profile">👤 Profile</Link></li>
+            <li></li>
             <li>🚪 Log Out</li>
           </ul>
         </aside>
