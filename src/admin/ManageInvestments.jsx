@@ -56,8 +56,8 @@ const ManageInvestments = () => {
              <li><Link to="/">🏠 Home</Link></li>
           <li><Link to="/admin">🏠 Dashboard</Link></li>
           <li><Link to="/admin/manage-users">👥 Manage Users</Link></li>
-          <li><Link to="/admin/manage-transactions">💳 Manage Transactions</Link></li>
-          <li><Link to="/admin/manage-investments" className="active-link">💰 Manage Investments</Link></li>
+          <li><Link to="/admin/manage-transactions">💳 Transactions</Link></li>
+          <li><Link to="/admin/manage-investments" className="active-link">💰 Investments</Link></li>
           <li><Link to="/admin/profile">👤 Profile</Link></li>
           <li><Link to="/admin/settings">⚙️ Settings</Link></li>
           <li><Link to="/logout">🚪 Log Out</Link></li>

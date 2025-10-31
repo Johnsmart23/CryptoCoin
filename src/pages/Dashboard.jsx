@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
 import { AdvancedRealTimeChart } from "react-ts-tradingview-widgets";
@@ -29,7 +30,6 @@ const WalletDashboard = () => {
             <li><Link to="/transfer">💸  Transfer Coin</Link></li>
             <li><Link to="/transactions">💳 Transaction</Link></li>
             <li><Link to="/profile">👤 Profile</Link></li>
-            <li></li>
             <li>🚪 Log Out</li>
           </ul>
         </aside>

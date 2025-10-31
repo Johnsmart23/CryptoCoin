@@ -1,4 +1,5 @@
-
+import React from "react";
+import { Link } from "react-router-dom";
 
 const AboutUs = () => {
   return (
@@ -19,7 +20,8 @@ const AboutUs = () => {
           Whether you’re a beginner or a professional, we provide the tools, insights, and support you need to make confident investment decisions.
           Join us today and take control of your financial future smart trading starts here.
          </p>
-          <button className="read-more">Read More</button>
+         <Link to="/about"><button className="read-more">Read More</button></Link>
+          
         </div>
       </div>
     </section>

@@ -1,5 +1,24 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import "./TransferCoin.css"; // Optional styling file
+
+const Sidebar = () => {
+  return (
+    <aside className="sidebar">
+      <h2 className="logo">💼 WALLET</h2>
+      <ul className="menu">
+        <li><Link to="/">🏠 Home</Link></li>
+        <li><Link to="/dashboard">📊 Dashboard</Link></li>
+        <li><Link to="/wallet">💼 My Wallet</Link></li>
+        <li><Link to="/investment">💰 Investment</Link></li>
+        <li><Link to="/transfer" className="active">💸 Transfer Coin</Link></li>
+        <li><Link to="/transactions">💳 Transactions</Link></li>
+        <li><Link to="/profile">👤 Profile</Link></li>
+        <li><Link to="/logout">🚪 Log Out</Link></li>
+      </ul>
+    </aside>
+  );
+};
 
 const TransferCoin = () => {
   const [formData, setFormData] = useState({
@@ -17,40 +36,27 @@ const TransferCoin = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (selectedTab === "send") {
-      console.log("Sending:", formData);
-      alert(`You sent ${formData.amount} BTC to ${formData.address}`);
+      alert(`✅ You sent ${formData.amount} BTC to ${formData.address}`);
     } else {
-      console.log("Receiving to wallet address");
-      alert("Your wallet address copied successfully!");
+      alert("✅ Your wallet address has been copied!");
     }
   };
 
   return (
-    <div className="transfer-container">
-      {/* ===== Sidebar ===== */}
-      <aside className="sidebar">
-        <h2 className="logo">WALLET</h2>
-        <ul className="menu">
-          <li><Link to="/">🏠 Home</Link></li>
-          <li><Link to="/wallet">💼 My Wallet</Link></li>
-          <li><Link to="/dashboard">📊 Dashboard</Link></li>
-          <li><Link to="/investment">💰 Investment</Link></li>
-          <li><Link to="/transactions">💳 Transactions</Link></li>
-          <li><Link to="/profile">👤 Profile</Link></li>
-          <li><Link to="/logout">🚪 Log Out</Link></li>
-        </ul>
-      </aside>
+    <div className="transfer-page">
+      {/* Sidebar */}
+      <Sidebar />
 
-      {/* ===== Main Content ===== */}
+      {/* Main Content */}
       <main className="transfer-main">
-        {/* ===== Topbar ===== */}
+        {/* Topbar */}
         <div className="topbar">
           <div className="balance">
             <span>Your balance</span>
             <h4>$650.00 USD</h4>
           </div>
           <div className="profile">
-            <img src="/images/user.png" alt="Profile" />
+            <img src="/images/user.png" alt="Profile" className="profile-img" />
             <p>
               Welcome back<br />
               <strong>John Doe</strong>
@@ -58,96 +64,95 @@ const TransferCoin = () => {
           </div>
         </div>
 
-        {/* ===== Transfer Section ===== */}
+        {/* Transfer Section */}
         <section className="transfer-section">
-          <h2 className="transfer-title">Transfer Coins</h2>
+          <h2 className="transfer-title">💸 Transfer Coins</h2>
 
-          <div className="transfer-content">
-            {/* Tabs */}
-            <div className="transfer-tabs">
-              <button
-                className={selectedTab === "send" ? "active" : ""}
-                onClick={() => setSelectedTab("send")}
-              >
-                Send
-              </button>
-              <button
-                className={selectedTab === "receive" ? "active" : ""}
-                onClick={() => setSelectedTab("receive")}
-              >
-                Receive
-              </button>
-            </div>
+          {/* Tabs */}
+          <div className="transfer-tabs">
+            <button
+              className={selectedTab === "send" ? "active" : ""}
+              onClick={() => setSelectedTab("send")}
+            >
+              Send
+            </button>
+            <button
+              className={selectedTab === "receive" ? "active" : ""}
+              onClick={() => setSelectedTab("receive")}
+            >
+              Receive
+            </button>
+          </div>
 
-            {/* ===== Conditional Forms ===== */}
-            {selectedTab === "send" ? (
-              <form onSubmit={handleSubmit} className="transfer-form">
-                <div className="currency-row">
-                  <select required>
-                    <option value="BTC">BTC</option>
-                    <option value="ETH">ETH</option>
-                    <option value="LTC">LTC</option>
-                    <option value="USD">USD</option>
-                  </select>
-                </div>
+          {/* Send Form */}
+          {selectedTab === "send" ? (
+            <form onSubmit={handleSubmit} className="transfer-form">
+              <div className="currency-row">
+                <select required>
+                  <option value="BTC">BTC</option>
+                  <option value="ETH">ETH</option>
+                  <option value="LTC">LTC</option>
+                  <option value="USD">USD</option>
+                </select>
+              </div>
 
-                <label>Recipient Wallet Address</label>
+              <label>Recipient Wallet Address</label>
+              <input
+                type="text"
+                name="address"
+                placeholder="Enter wallet address"
+                value={formData.address}
+                onChange={handleChange}
+                required
+              />
+
+              <label>Amount to Send</label>
+              <div className="amount-row">
                 <input
-                  type="text"
-                  name="address"
-                  placeholder="Enter wallet address"
-                  value={formData.address}
+                  type="number"
+                  name="amount"
+                  placeholder="0.00000"
+                  value={formData.amount}
                   onChange={handleChange}
                   required
                 />
-
-                <label>Amount to Send</label>
-                <div className="amount-row">
-                  <input
-                    type="number"
-                    name="amount"
-                    placeholder="0.00000"
-                    value={formData.amount}
-                    onChange={handleChange}
-                    required
-                  />
-                  <span className="unit">BTC</span>
-                </div>
-
-                <button type="submit" className="send-btn">
-                  Send Coin
-                </button>
-              </form>
-            ) : (
-              <div className="receive-section">
-                <h3>Your Wallet Address</h3>
-                <p>Use this address to receive crypto:</p>
-
-                <div className="wallet-address">
-                  <input
-                    type="text"
-                    readOnly
-                    value="3F1AhxsZs1HU8vCxNLbMDEqwa56GNbxtgX"
-                  />
-                  <button
-                    onClick={() => {
-                      navigator.clipboard.writeText(
-                        "3F1AhxsZs1HU8vCxNLbMDEqwa56GNbxtgX"
-                      );
-                      alert("Address copied!");
-                    }}
-                  >
-                    Copy
-                  </button>
-                </div>
-
-                <div className="qr-code">
-                  <img src="/images/qrcode.png" alt="QR Code" />
-                  <p>Scan to receive crypto</p>
-                </div>
+                <span className="unit">BTC</span>
               </div>
-            )}
-          </div>
+
+              <button type="submit" className="send-btn">
+                Send Coin
+              </button>
+            </form>
+          ) : (
+            /* Receive Section */
+            <div className="receive-section">
+              <h3>Your Wallet Address</h3>
+              <p>Use this address to receive crypto:</p>
+
+              <div className="wallet-address">
+                <input
+                  type="text"
+                  readOnly
+                  value="3F1AhxsZs1HU8vCxNLbMDEqwa56GNbxtgX"
+                />
+                <button
+                  onClick={() => {
+                    navigator.clipboard.writeText(
+                      "3F1AhxsZs1HU8vCxNLbMDEqwa56GNbxtgX"
+                    );
+                    alert("Address copied!");
+                  }}
+                >
+                  Copy
+                </button>
+              </div>
+
+              <div className="qr-code">
+                <img src="/images/qrcode.png" alt="QR Code" />
+                <p>Scan to receive crypto</p>
+              </div>
+            </div>
+          )}
         </section>
       </main>
     </div>

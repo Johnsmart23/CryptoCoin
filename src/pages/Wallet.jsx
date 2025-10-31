@@ -16,7 +16,7 @@ const Wallet = () => {
           <li><Link to="/investment">💰 Investment</Link></li>
           <li><Link to="/dashboard">📊 Dashboard</Link></li>
           <li><Link to="/transfer">💸  Transfer Coin</Link></li>
-          <li><Link to="/transaction">💳 Transactions</Link></li>
+          <li><Link to="/transactions">💳 Transactions</Link></li>
           <li><Link to="/profile">👤 Profile</Link></li>
           <li><Link to="/logout">🚪 Log Out</Link></li>
         </ul>

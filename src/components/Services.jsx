@@ -1,7 +1,8 @@
+import React from "react";
 
 const Services = () => {
   const servicesData = [
-     {
+    {
       id: 1,
       icon: "/images/icon-7.png",
       title: "Current Wallet",
@@ -48,15 +49,22 @@ const Services = () => {
   return (
     <section className="services">
       <h2 className="services-title">Services</h2>
-      <p className="services-subtitle">Buy, Sell And Exchange Cryptocurrency</p>
+      <p className="services-subtitle">
+        Buy, Sell And Exchange Cryptocurrency
+      </p>
 
       <div className="services-grid">
         {servicesData.map((service) => (
           <div key={service.id} className="service-card">
-            <img src={service.icon} alt={service.title} className="service-icon" />
-            <h3 className="service-title">{service.title}</h3>
-            <p className="service-description">{service.description}</p>
-            
+            <img
+              src={service.icon}
+              alt={service.title}
+              className="service-icon"
+            />
+            <div className="service-text">
+              <h3 className="service-title">{service.title}</h3>
+              <p className="service-description">{service.description}</p>
+            </div>
           </div>
         ))}
       </div>
