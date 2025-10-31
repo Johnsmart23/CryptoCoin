@@ -36,8 +36,8 @@ const AdminSettings = () => {
              <li><Link to="/">🏠 Home</Link></li>
           <li><Link to="/admin">🏠 Dashboard</Link></li>
           <li><Link to="/admin/manage-users">👥 Manage Users</Link></li>
-          <li><Link to="/admin/manage-transactions">💳 Manage Transactions</Link></li>
-          <li><Link to="/admin/manage-investments">💰 Manage Investments</Link></li>
+          <li><Link to="/admin/manage-transactions">💳  Transactions</Link></li>
+          <li><Link to="/admin/manage-investments">💰  Investments</Link></li>
           <li><Link to="/admin/profile">👤 Profile</Link></li>
           <li><Link to="/admin/settings" className="active-link">⚙️ Settings</Link></li>
           <li><Link to="/logout">🚪 Log Out</Link></li>

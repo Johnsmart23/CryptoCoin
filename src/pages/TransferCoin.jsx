@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./TransferCoin.css"; // Optional styling file
 
 const Sidebar = () => {
   return (

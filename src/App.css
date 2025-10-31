@@ -2628,7 +2628,9 @@ html, body, #root {
   border: 1px solid #ccc;
   border-radius: 6px;
 }
-
+.topbar h2{
+  color: #fff;
+}
 .users-table {
   width: 100%;
   border-collapse: collapse;
@@ -2768,9 +2770,10 @@ html, body, #root {
   margin-bottom: 25px;
 }
 
+
 .welcome-text h2 {
   font-size: 1.6rem;
-  color: #333;
+  color: #fff;
   margin-bottom: 4px;
 }
 

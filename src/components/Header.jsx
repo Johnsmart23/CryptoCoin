@@ -60,10 +60,17 @@ const Header = () => {
             <Link to="/contact">Contact</Link>
           </li>
 
-          {/* ✅ Login button now navigates to login page */}
+          {/* ✅ User Login Button */}
+          <li>
+            <Link to="/login">
+              <button className="login-btn">Login</button>
+            </Link>
+          </li>
+
+          {/* ✅ Admin Login Button */}
           <li>
             <Link to="/admin">
-              <button className="login-btn">Login</button>
+              <button className="admin-btn">Admin Login</button>
             </Link>
           </li>
         </ul>
